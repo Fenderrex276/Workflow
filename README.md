@@ -1,2 +1,2 @@
 # Workflow
-NSU OOP lab-2
+NSU OOP task-2
