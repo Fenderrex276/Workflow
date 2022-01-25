@@ -1,0 +1,9 @@
+desc
+1 = readfile ..\tests\FirstTest\in_file.txt
+2 = writefile ..\tests\FirstTest\out_file.txt
+5 = grep something
+9 = sort
+7 = replace word1 word2
+4 = dump ..\tests\FirstTest\out.txt
+csed
+1 -> 7 -> 4 -> 9 -> 5 -> 2
