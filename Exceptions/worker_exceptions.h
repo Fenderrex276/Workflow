@@ -3,6 +3,7 @@
 
 #include "exception.h"
 
+// добавить исключение неверного порядка запуска воркеров.
 class WorkerException: public Exception {
 public:
     explicit WorkerException(const std::string& message);

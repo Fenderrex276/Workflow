@@ -1,6 +1,6 @@
 #include "work_executor.h"
 
-void WorkExecutor::executeWork(std::map <int, std::pair<std::string, std::string>>& config, std::vector <int>& order) {
+void WorkExecutor::execute(std::map <int, std::pair<std::string, std::string>>& config, std::vector <int>& order) {
 
     std::string type, args;
 
@@ -11,7 +11,7 @@ void WorkExecutor::executeWork(std::map <int, std::pair<std::string, std::string
     for(auto i: order) {
 
         if(config.find(i) == config.end())
-            throw ExecutorException("Error, can't call block" + std::to_string(i));
+            throw ExecutorException("Error, can't call block " + std::to_string(i));
 
         type = config[i].first;
         args = config[i].second;
@@ -29,10 +29,13 @@ void WorkExecutor::executeWork(std::map <int, std::pair<std::string, std::string
         else if (type == "dump")
             worker = new WorkerDump;
         else
-            throw ExecutorException("Error, unknown type of block" + type);
+            throw ExecutorException("Error, unknown type of block " + type);
 
         worker->process(data, args);
 
     }
 
 }
+//validation exception
+//вывести ошибки (по аргументам, и по неправильному порядку) также вынести функцию parseArgs
+// дополнить исключения для воркера,

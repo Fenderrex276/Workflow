@@ -19,14 +19,13 @@ private:
     void parseOrder(std::string &line);
 
 public:
-    ConfigReader();
+    explicit ConfigReader(std::string file_name);
     ~ConfigReader();
     void parseConfigFile();
     std::vector <int> getOrder();
     std::map <int, std::pair<std::string, std::string>> getConfig();
 
 };
-
 
 
 #endif //TASK_2_CONFIGREADER_H

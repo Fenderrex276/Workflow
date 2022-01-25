@@ -34,7 +34,7 @@ std::pair<std::string, std::string> WorkerReplace::parseArgs(const std::string& 
 
     if (word1.empty() || word2.empty())
 
-        throw WorkerException("Warning! Invalid arguments for replace " + args);
+        throw WorkerException("Error, invalid arguments for replace " + args);
 
     return {word1, word2};
 

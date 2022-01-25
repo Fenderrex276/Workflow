@@ -20,7 +20,7 @@
 
 class WorkExecutor {
 public:
-    static void executeWork(std::map <int, std::pair<std::string, std::string>>& config, std::vector <int>& order);
+    static void execute(std::map <int, std::pair<std::string, std::string>>& config, std::vector <int>& order);
 };
 
 #endif //TASK_2_WORK_EXECUTOR_H

@@ -1,9 +1,10 @@
 #include "configreader.h"
 
 
-ConfigReader::ConfigReader() {
-    file.open("workflow.txt");
+ConfigReader::ConfigReader(std::string file_name) {
+    file.open(file_name);
 }
+
 ConfigReader::~ConfigReader() {
     file.close();
 }
@@ -33,7 +34,7 @@ void ConfigReader::parseConfigFile() {
 
 void ConfigReader::parseBlockTask(std::string &line) {
 
-    std::regex regex_sentence(R"(([\d]+)[ ]*=[ ]*([\w]+)[ ]*([\w .]*))");
+    std::regex regex_sentence(R"(([\d]+)[ ]*=[ ]*([\w]+)[ ]*([\w \\.]*))");
     std::string number, type_block, args;
 
     auto sentence_begin = std::sregex_iterator(line.begin(), line.end(), regex_sentence);
