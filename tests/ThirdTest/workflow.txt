@@ -1,0 +1,8 @@
+desc
+1 = readfile ..\tests\ThirdTest\in_file.txt
+2 = writefile ..\tests\ThirdTest\out_file.txt
+5 = grep some
+9 = sort
+7 = replace abc def
+csed
+7 -> 9 -> 5 -> 1 -> 2
